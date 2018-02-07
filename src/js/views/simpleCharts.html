@@ -1,0 +1,91 @@
+<!--
+Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <h1>SimpleCharts Content Area</h1>
+    <div id="containerDiv">
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-sm-12 oj-md-12 oj-lg-12 oj-flex-item" style="text-align: center;">
+                <oj-label for="basicSelect">Select a Chart</oj-label>
+                <oj-select-one id="basicSelect" value="{{chartType}}" style="max-width:20em">
+                    <oj-option value="pie">Pie</oj-option>
+                    <oj-option value="bar">Bar</oj-option>
+                    <oj-option value="line">Line</oj-option>
+                    <oj-option value="area">area</oj-option>
+                    <oj-option value="funnel">funnel</oj-option>
+                    <oj-option value="combo">combo</oj-option>
+                    <oj-option value="lineWithArea">lineWithArea</oj-option>
+                    <oj-option value="pyramid">pyramid</oj-option>
+                </oj-select-one>
+ 
+                <br>
+                <oj-label for="basicSelect">Select Coordinate System</oj-label>
+                <oj-buttonset-one value="{{coordinateSystem}}">
+ 
+                    <oj-option value='cartesian'>
+                        <span> cartesian</span>
+                    </oj-option>
+                    <oj-option value='polar'>
+                        <span> polar</span>
+                    </oj-option>
+ 
+                </oj-buttonset-one>   
+ 
+                <oj-chart id="barChart"
+                          type="{{chartType}}"
+                          orientation="[[orientationValue]]"
+                          stack="[[stackValue]]"
+                          series="[[barSeries]]"
+                          groups="[[barGroups]]"
+                          animation-on-display="auto"
+                          animation-on-data-change="auto"
+                          hide-and-show-behavior="withRescale"
+                          hidden-categories="{{hiddenCategories}}"
+                          coordinate-system="{{coordinateSystem}}"
+                          selection-mode="multiple"
+                          selection="{{selectedItems}}"
+                          on-selection-changed="[[selectionListener]]"
+ 
+                          style="px;width:100%;height:350px;"
+                          >
+                </oj-chart>
+            </div>
+            <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item">
+                <oj-text-area id="text-area" value="{{inputData}}" style="max-width: 100%;">
+                </oj-text-area>
+ 
+                <oj-button on-click='[[parseData]]'>Submit Data</oj-button>
+            </div>
+            <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item">
+                <oj-label for="basicSelect">Group detection</oj-label>
+                <oj-buttonset-one value="{{groupDetection}}">
+ 
+                    <oj-option value='automatic'>
+                        <span> automatic</span>
+                    </oj-option>
+                    <oj-option value='polar'>
+                        <span> custom</span>
+                    </oj-option>
+ 
+                </oj-buttonset-one>   
+                <br>
+                <div class="oj-panel oj-panel-shadow-lg oj-sm-margin-2x demo-panel-customizations"
+                     style="width: 100%;height: 150px;">
+                    <oj-select-many id="combobox" value="{{selectedGroups}}" style="max-width:20em">
+ 
+                        <!-- ko foreach: headerCombo -->
+                        <oj-option value='[[id]]'>
+                            <span data-bind="text: label"></span>
+                        </oj-option>
+                        <!-- /ko -->
+                    </oj-select-many>
+ 
+                    <oj-button on-click='[[submitGroups]]'>Submit Groups</oj-button>
+ 
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
