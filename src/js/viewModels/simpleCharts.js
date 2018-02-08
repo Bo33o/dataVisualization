@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/*
- * Your simpleCharts ViewModel code goes here
- */
 define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart', 'ojs/ojinputtext', 'ojs/ojlabel', 'ojs/ojselectcombobox'],
         function (oj, ko, $) {
 
