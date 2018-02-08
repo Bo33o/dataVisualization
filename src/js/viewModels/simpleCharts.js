@@ -1,4 +1,6 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart', 'ojs/ojinputtext', 'ojs/ojlabel', 'ojs/ojselectcombobox'],
+
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart', 'ojs/ojinputtext', 
+    'ojs/ojlabel'],
         function (oj, ko, $) {
 
             function SimpleChartsViewModel() {

@@ -1,5 +1,6 @@
 
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojtoolbar'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart', 'ojs/ojinputtext', 
+    'ojs/ojlabel'],
         function (oj, ko, $) {
 
             function ComplexChartsViewModel() {
@@ -18,9 +19,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojtoolbar'],
                 self.items = [];
                 self.series = [];
 
-                self.inputData = 'nom\\tlow\\tq1\\tq2\\tq3\\thigh\\tx1\\ty1\\tx2\\ty2\\nbadr\\t1\\t2\\t3\\t4\\t5\\t6\\t7\\t8\\t9\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11';
-
-
+                self.inputData = 'nom\\tlow\\tq1\\tq2\\tq3\\thigh\\tx2\\ty2\\tx3\\tx4\\nbadr\\t1\\t2\\t3\\t4\\t5\\t6\\t7\\t8\\t9\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11';
+                self.hiddenCategories = ko.observableArray([]);
+                self.coordinateSystem = ko.observable('cartesian');
 
                 var boxPlotSeries = [
                     {name: "Series 1", items: [
@@ -53,50 +54,39 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojtoolbar'],
                     self.series = [];
                     self.header = [];
                     self.headerCombo = [];
+                    self.cols = [];
+                    self.columns = [];
 
                     for (var i = 0; i < rows.length; i++) {
                         self.splitedData[i] = rows[i].split(/\\t/);
 
                     }
-
+                    console.log("self.splitedData");
+                    console.log(self.splitedData);
+                    console.log("self.columns");
+                    console.log(self.columns);
+                    console.log("self.cols");
+                    console.log(self.cols);
                     if (self.splitedData.length > 0) {
                         self.header = self.splitedData[0];
                         var matrix = self.splitedData;
                         for (var i = 0; i < self.header.length; i++) {
                             self.headerCombo.push({id: i, label: self.header[i]});
                             self.columns[i] = self.getColumnValues(matrix, i);
-                            self.cols[i] = [...self.columns[i]];
+                            self.cols[i] = self.columns[i];
                             self.cols[i].shift();
                         }
                     }
                 }
 
-                self.parseData = function (event) {
-//                    for (var i = 0; i < self.header.length; i++) {
-//                        if (self.header[i].toLowerCase() === "low") {
-//                            self.low = i;
-//                        } else if (self.header[i].toLowerCase() === "q1") {
-//                            self.q1 = i;
-//                        } else if (self.header[i].toLowerCase() === "q2") {
-//                            self.q2 = i;
-//                        } else if (self.header[i].toLowerCase() === "q3") {
-//                            self.q3 = i;
-//                        } else if (self.header[i].toLowerCase() === "high") {
-//                            self.high = i;
-//                        } else if (!self.cols[i].some(isNaN)) {  // la colonne est numerique
-//                            self.numeric.push(i);
-//                        } else {
-//                            self.alpha.push(i);
-//                        }
-//                        ;
-//                    }
-
+                self.getData = function (event) {
+                    self.items = [];
                     for (var i = 1; i < self.splitedData.length; i++) {
                         var item = {};
                         self.numeric = [];
                         self.alpha = [];
                         for (var j = 0; j < self.splitedData[i].length; j++) {
-                            
+
                             if (self.header[j].toLowerCase() === "low") {
                                 item["low"] = self.splitedData[i][j];
                             } else if (self.header[j].toLowerCase() === "q1") {
@@ -108,33 +98,38 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojtoolbar'],
                             } else if (self.header[j].toLowerCase() === "high") {
                                 item["high"] = self.splitedData[i][j];
                             } else if (!self.cols[j].some(isNaN)) {  // la colonne est numerique
-                                
+
                                 self.numeric.push(self.splitedData[i][j]);
                             } else {
                                 self.alpha.push(self.splitedData[i][j]);
                             }
                         }
-                        
+
                         item["items"] = self.numeric;
                         if (!self.items[self.alpha.join(" ")]) {
 
                             self.items[self.alpha.join(" ")] = [];
                         }
-                        
+
                         self.items[self.alpha.join(" ")].push(item);
 
                     }
-                    
+
                     for (key in self.items) {
-                        
+
                         self.series.push({name: key, items: self.items[key]})
                     }
-                    
+
                     console.log(self.series);
                     console.log(boxPlotSeries)
                     self.boxPlotSeriesValue(self.series);
-                    
+
                 };
+
+                self.parseData = function (event) {
+                    self.splitData();
+                    self.getData();
+                }
 
 
 
@@ -145,7 +140,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojtoolbar'],
                 };
 
                 self.splitData();
-                self.parseData();
+                self.getData();
 
 
 
