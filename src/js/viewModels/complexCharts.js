@@ -21,7 +21,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart
 
                 self.inputData = 'nom\\tlow\\tq1\\tq2\\tq3\\thigh\\tx2\\ty2\\tx3\\tx4\\nbadr\\t1\\t2\\t3\\t4\\t5\\t6\\t7\\t8\\t9\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11';
                 self.hiddenCategories = ko.observableArray([]);
-                self.coordinateSystem = ko.observable('cartesian');
 
                 var boxPlotSeries = [
                     {name: "Series 1", items: [
