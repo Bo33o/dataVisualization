@@ -39,10 +39,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart
                 //chart groups
                 self.barGroups = ko.observableArray([]);
 
-                //array to store hidden groups
-                self.hiddenCategories = ko.observableArray([]);
                 // string to store input string
-                self.inputData = 'prenom\\tMath\\tPhysics\\tProgramming\\tnom\\tjava\\nbadr\\t2\\t3\\t4\\tezzir\\t10\\nwafae\\t8\\t7\\t6\\tabder\\t2';
+                self.inputData = 'First Name\\tMath\\tPhysics\\tArabic\\tLast Name\\tProgramming\\tNetwork\\nBadr\\t20\\t15\\t17\\tABOU YAHYA\\t12\\t17\\nWafae\\t14\\t19\\t16\\tEZZIR\\t11\\t13\\nYoussef\\t17\\t15\\t10\\tMAGHRIBI\\t18\\t20\\nAbdelali\\t10\\t20\\t12\\tMENZEL\\t11\\t20\\nYahya\\t15\\t12\\t20\\tIBN BADR\\t13\\t12';
                 
                 // variable to store coordinate System ( cartesian / polar )
                 self.coordinateSystem = ko.observable('cartesian');

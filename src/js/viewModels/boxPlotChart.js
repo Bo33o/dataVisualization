@@ -25,9 +25,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojselectcombobox', 'ojs/ojchart
                 self.items = [];
                 self.series = [];
 
-                self.inputData = 'nom\\tlow\\tq1\\tq2\\tq3\\thigh\\tx2\\ty2\\tx3\\tx4\\nbadr\\t1\\t2\\t3\\t4\\t5\\t6\\t7\\t8\\t9\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11\\nyahya\\t1\\t3\\t5\\t7\\t10\\t20\\t7\\t3\\t11';
-                self.hiddenCategories = ko.observableArray([]);
-
+                self.inputData = 'nom\\tlow\\tq1\\tq2\\tq3\\thigh\\tx1\\tx2\\tx3\\tx4\\nbadr\\t1\\t6\\t11\\t16\\t21\\t36\\t27\\t28\\t15\\nwafae\\t12\\t17\\t22\\t27\\t32\\t20\\t40\\t17\\t40\\nyahya\\t14\\t19\\t24\\t29\\t34\\t10\\t38\\t28\\t35\\nkarim\\t1\\t6\\t11\\t16\\t21\\t40\\t9\\t37\\t8\\nsimo\\t7\\t12\\t17\\t22\\t27\\t35\\t14\\t4\\t10\\nanoir\\t20\\t25\\t30\\t35\\t40\\t21\\t25\\t2\\t25\\namine\\t8\\t13\\t18\\t23\\t28\\t35\\t18\\t13\\t22\\nabdelali\\t7\\t12\\t17\\t22\\t27\\t27\\t17\\t35\\t7';
+                
                 self.boxPlotSeriesValue = ko.observableArray([]);
 
                 /* toggle buttons */

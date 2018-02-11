@@ -19,7 +19,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojinputtext', 'o
                 this.scatterSeriesValue = ko.observableArray(self.series);
 
                 // the default data
-                self.inputData = 'serie name\\tx1\\ty1\\tx2\\ty2\\tx3\\ty3\\tx4\\ty4\\tx5\\ty5\\tx6\\ty6\\tx7\\ty7\\nserie 1\\t19\\t90\\t73\\t32\\t24\\t54\\t41\\t53\\t42\\t19\\t49\\t8\\t82\\t84\\nserie 2\\t100\\t99\\t27\\t70\\t77\\t94\\t57\\t34\\t21\\t61\\t65\\t22\\t98\\t73\\nserie 3\\t99\\t87\\t78\\t49\\t69\\t84\\t38\\t31\\t88\\t67\\t45\\t8\\t17\\t74\\nserie 4\\t41\\t86\\t25\\t54\\t10\\t32\\t33\\t21\\t23\\t64\\t66\\t48\\t96\\t0\\nserie 5\\t98\\t56\\t85\\t48\\t26\\t12\\t54\\t12\\t8\\t9\\t3\\t83\\t32\\t22\\n';
+                self.inputData = 'serie name\\tx1\\ty1\\tx2\\ty2\\tx3\\ty3\\tx4\\ty4\\tx5\\ty5\\tx6\\ty6\\tx7\\ty7\\nserie 1\\t19\\t90\\t73\\t32\\t24\\t54\\t41\\t53\\t42\\t19\\t49\\t8\\t82\\t84\\nserie 2\\t100\\t99\\t27\\t70\\t77\\t94\\t57\\t34\\t21\\t61\\t65\\t22\\t98\\t73\\nserie 3\\t99\\t87\\t78\\t49\\t69\\t84\\t38\\t31\\t88\\t67\\t45\\t8\\t17\\t74\\nserie 4\\t41\\t86\\t25\\t54\\t10\\t32\\t33\\t21\\t23\\t64\\t66\\t48\\t96\\t0\\nserie 5\\t98\\t56\\t85\\t48\\t26\\t12\\t54\\t12\\t8\\t9\\t3\\t83\\t32\\t22';
 
                 // function that return the column n of a matrix 
                 self.getColumnValues = function (matrix, n) {
