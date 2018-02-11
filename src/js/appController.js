@@ -21,22 +21,22 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
        self.router = oj.Router.rootInstance;
        self.router.configure({
          'simpleCharts': {label: 'SimpleCharts', isDefault: true},
-         'complexCharts': {label: 'ComplexCharts'},
-         'customers': {label: 'Customers'},
+         'boxPlotChart': {label: 'BoxPlotChart'},
+         'scatterChart': {label: 'ScatterChart'},
          'about': {label: 'About'}
        });
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
       // Navigation setup
       var navData = [
-      {name: 'SimpleCharts', id: 'simpleCharts',
+      {name: 'Simple Charts', id: 'simpleCharts',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
-      {name: 'ComplexCharts', id: 'complexCharts',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'},
-      {name: 'Customers', id: 'customers',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'},
+      {name: 'Box Plot Chart', id: 'boxPlotChart',
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
+      {name: 'Scatter Chart', id: 'scatterChart',
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
       {name: 'About', id: 'about',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-person-icon-24'}
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
 

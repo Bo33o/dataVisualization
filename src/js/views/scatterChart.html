@@ -3,16 +3,22 @@
  The Universal Permissive License (UPL), Version 1.0
 -->
 <div class="oj-hybrid-padding">
-    <h1>Customers Content Area</h1>
+    <h1>Scatter Chart Data Visualisation</h1>
     <div>
         <oj-chart 
             type="scatter" 
             selection-mode="multiple"
             series="[[scatterSeriesValue]]"
-            groups="[[scatterGroupsValue]]" 
             animation-on-display="auto"
             hover-behavior="dim"
             style="max-width:500px;width:100%;height:350px;">
         </oj-chart>
+        
+        <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item">
+                <oj-text-area id="text-area" value="{{inputData}}" style="max-width: 100%;">
+                </oj-text-area>
+ 
+                <oj-button on-click='[[parseData]]'>Submit Data</oj-button>
+            </div>
     </div>
 </div>
