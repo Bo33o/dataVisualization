@@ -5,14 +5,44 @@
 <div class="oj-hybrid-padding">
     <h1>Box Plot Chart Data Visualisation</h1>
     <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-flex-item">
-
+        <oj-tab-bar 
+            drill-mode="none"
+            edge="top" 
+            selection="{{selectedItem}}"
+            on-selection-changed ="[[changeType]]"
+            >
+            <ul>
+                <li id="simple">
+                    <a href="#">
+                        Simple Parse
+                    </a>
+                </li>
+                <li id="advanced">
+                    Advanced Parse
+                    </a>
+                </li>
+            </ul>
+        </oj-tab-bar>
         <!-- input data -->
-        <oj-label>Input Data : </oj-label>
-        <oj-text-area id="text-area" value="{{inputData}}" style="max-width: 100%;">
-        </oj-text-area>
+        <div id="simpleDiv" class="dataDiv oj-sm-12 oj-md-12 oj-lg-12 oj-flex-item">
+            <oj-label>Input Data : </oj-label>
+            <oj-text-area id="text-area" value="{{simpleInputData}}" style="max-width: 100%;">
+            </oj-text-area>
+            <oj-button on-click='[[parseDataSimply]]'>Simple Submit Data</oj-button>
+        </div>
+        <div id = "advancedDiv" class="dataDiv oj-sm-12 oj-md-12 oj-lg-12 oj-flex-item" style="display: none;">
+            <oj-label>Input Data : </oj-label>
+            <oj-text-area id="text-area" value="{{advancedInputData}}" style="max-width: 100%;">
+            </oj-text-area>
+            <oj-button on-click='[[parseDataByRows]]'>Submit Data by Rows</oj-button>
+            <oj-button on-click='[[parseDataByColumns]]'>Submit Data by columns</oj-button>
+        </div>
 
-        <oj-button on-click='[[parseDataSimply]]'>Submit Data by Columns</oj-button>
-        <oj-button on-click='[[parseDataByColumns]]'>Submit Data by Rows</oj-button>
+
+
+
+
+
     </div>
     <div class="oj-sm-12 oj-md-12 oj-lg-12 oj-flex-item">
         <!-- Chart object -->

@@ -88,6 +88,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojchart', 'ojs/ojinputtext', 'o
                     }
                 };
 
+                self.advancedParse = function () {
+                    
+                }
+
                 self.splitData();
                 self.parseData();
             }
