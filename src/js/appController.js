@@ -31,7 +31,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       var navData = [
       {name: 'Simple Charts', id: 'simpleCharts',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
-      {name: 'Box Plot Chart', id: 'boxPlotChart',
+      {name: 'Box Plot Diagram', id: 'boxPlotChart',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
       {name: 'Scatter Chart', id: 'scatterChart',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
